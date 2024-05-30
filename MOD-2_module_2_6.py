@@ -38,9 +38,9 @@ ________________________________________________________________________________
 def single_root_words(root_word, *other_words):
 
     same_words = []
-    not_same = []
+
     for word in other_words:
-        # Проверяем, содержится ли root_word в слове (с учетом регистра)
+    
         if word.lower().count(root_word.lower()) > 0:
             same_words.append(word)
 
