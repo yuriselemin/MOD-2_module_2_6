@@ -11,7 +11,8 @@ def single_root_words(root_word, *other_words):
 
     for word in other_words:
 
-        if word.lower().count(root_word.lower()) > 0:
+        # if word.lower().count(root_word.lower()) > 0:
+        if word.lower() in root_word.lower() or root_word.lower() in word.lower():
             same_words.append(word)
 
     return same_words
@@ -25,8 +26,8 @@ print(result2)
 
 '''
 ______________________________________________________________________________________________________________
-в данной задаче вторым ркзультатом выходит пустой список
-предполагаю что параметр root_word должен быть короче параметров other_words
+в данной задаче вторым условием выходит пустой список
+предполагаю что  параметр root_word должен быть короче параметров other_words
 так как является вложенной строкой.
 ниже проводил проверку предположения котрая дала положительный результат.
 ВОПРОС: как в решении задачи должно получиться ['Able', 'Disable']  и почему 'Mable' не вошло в этот список,
@@ -40,8 +41,9 @@ def single_root_words(root_word, *other_words):
     same_words = []
 
     for word in other_words:
-    
-        if word.lower().count(root_word.lower()) > 0:
+
+        # if word.lower().count(root_word.lower()) > 0:
+        if word.lower() in root_word.lower() or root_word.lower() in word.lower():
             same_words.append(word)
 
     return same_words
